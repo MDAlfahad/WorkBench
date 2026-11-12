@@ -3,7 +3,7 @@ import LoginButton from "../buttons/LoginButton";
 import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
   return (
-    <div className="bg-whtie">
+    <div className="bg-whtie fixed z-50 bg-white w-full shadow-lg">
       <div className="max-w-[1800px] w-full m-auto flex items-center justify-between px-4 lg:px-8 xl:px-12 py-2">
         <div>Grade</div>
         <div>

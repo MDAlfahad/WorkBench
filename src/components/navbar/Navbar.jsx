@@ -3,8 +3,8 @@ import LoginButton from "../buttons/LoginButton";
 import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
   return (
-    <div className="bg-">
-      <div className="flex items-center justify-between px-4 lg:px-8 xl:px-12 py-2">
+    <div className="bg-whtie">
+      <div className="max-w-[1800px] w-full m-auto flex items-center justify-between px-4 lg:px-8 xl:px-12 py-2">
         <div>Grade</div>
         <div>
           <ul className="flex items-center gap-10">

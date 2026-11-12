@@ -11,7 +11,7 @@ import {
 import { LuBell, LuNotepadText } from "react-icons/lu";
 import NoticeNotificationBox from "../components/notifications/NoticeNotificationBox";
 
-const AcadamicServices = () => {
+const AcadamicServicesPage = () => {
   return (
     <div className="max-w-[1800px] w-full flex items-start justify-center gap-5 lg:20 xl:gap-80 m-auto bg-gray-100 px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
       <div className="flex flex-col gap-4 max-w-[800px]">
@@ -93,4 +93,4 @@ const AcadamicServices = () => {
   );
 };
 
-export default AcadamicServices;
+export default AcadamicServicesPage;

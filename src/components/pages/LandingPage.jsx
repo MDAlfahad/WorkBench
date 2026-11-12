@@ -1,6 +1,6 @@
 import LandingPageCrausel from "../components/crausel/LandingPageCrausel";
 import { FaWhatsapp } from "react-icons/fa";
-import AcadamicServices from "./AcadamicServices";
+import AcadamicServicesPage from "./AcadamicServicesPage";
 import DetailsPage from "./DetailsPage";
 
 const LandingPage = () => {
@@ -15,7 +15,7 @@ const LandingPage = () => {
         </a>
       </div>
       <LandingPageCrausel />
-      <AcadamicServices/>
+      <AcadamicServicesPage/>
       <DetailsPage/>
     </div>
   );

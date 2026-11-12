@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
@@ -29,6 +29,7 @@ const LandingPageCrausel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -45,12 +46,23 @@ const LandingPageCrausel = () => {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
+  //auto slide
+  useEffect(() => {
+    if (isPaused) return;
 
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 3000); // Har 3 seconds (3000ms) mein slide change hogi
+
+    return () => clearInterval(timer);
+  }, [currentIndex, isPaused]);
   return (
     <div className=" h-[90vh] w-full m-auto relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full bg-center bg-cover duration-500 relative"
+        onMouseEnter={() => setIsPaused(true)} 
+        onMouseLeave={() => setIsPaused(false)}
       >
         <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-md text-sm">
           {slides[currentIndex].title}
@@ -69,7 +81,7 @@ const LandingPageCrausel = () => {
         </button>
       </div>
 
-      {/* <div className="flex justify-center py-2 space-x-2">
+      <div className="flex justify-center py-2 space-x-2">
         {slides.map((_, slideIndex) => (
           <div
             key={slideIndex}
@@ -79,7 +91,7 @@ const LandingPageCrausel = () => {
             }`}
           ></div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

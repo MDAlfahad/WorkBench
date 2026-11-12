@@ -13,7 +13,7 @@ import NoticeNotificationBox from "../components/notifications/NoticeNotificatio
 
 const AcadamicServices = () => {
   return (
-    <div className="max-w-[1800px] w-full flex items-start justify-center gap-5 lg:20 xl:gap-80 m-auto bg-white px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
+    <div className="max-w-[1800px] w-full flex items-start justify-center gap-5 lg:20 xl:gap-80 m-auto bg-gray-100 px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
       <div className="flex flex-col gap-4 max-w-[800px]">
         <div className="flex items-center gap-4 ">
           <div className="rounded-md  border-2 border-black-60 w-40 h-32  overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300">
@@ -75,7 +75,7 @@ const AcadamicServices = () => {
             </p>
           </div>
         </div>
-        <div className="h-[50vh] border border-secondar ">
+        <div className="h-[50vh] border border-primary/90 ">
           <div className="w-full flex items-center justify-between py-3 px-2  bg-primary/90">
             <h1 className="flex items-center text-2xl gap-2  text-white">
               <AiOutlineBell /> Latest Notice
@@ -85,8 +85,7 @@ const AcadamicServices = () => {
             </span>
           </div>
           <div className="w-full py-2 px-2 overflow-y-auto">
-
-            <NoticeNotificationBox/>
+            <NoticeNotificationBox />
           </div>
         </div>
       </div>

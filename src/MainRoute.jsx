@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from "./components/navbar/Navbar"
-import LandingPageCrausel from './components/components/crausel/LandingPageCrausel'
+import LandingPage from './components/pages/LandingPage'
 const MainRoute = () => {
   return (
     <div>
         <Navbar/>
         <div>
-          <LandingPageCrausel/>
+          <LandingPage/>
         </div>
     </div>
   )

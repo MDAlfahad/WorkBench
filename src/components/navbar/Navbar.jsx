@@ -9,6 +9,7 @@ const Navbar = () => {
         <div>
           <ul className="flex items-center gap-10">
             <li className="text-black hover:text-primary cursor-pointer">Syllabus</li>
+            <li className="text-black hover:text-primary cursor-pointer">Events</li>
             <li className="text-black hover:text-primary cursor-pointer">gallery</li>
             <li className="text-black hover:text-primary cursor-pointer">Raise Issue</li>
             <li className="text-black hover:text-primary cursor-pointer">Notice</li>

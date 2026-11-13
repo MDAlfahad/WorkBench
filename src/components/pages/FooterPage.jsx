@@ -1,6 +1,6 @@
 const FooterPage = () => {
   return (
-    <div className="max-w-[1800px] w-full lg:20 xl:gap-80 m-auto px-4  lg:px-10 xl:px-20 py-4 shadow">
+    <div className="max-w-[1800px] w-full lg:20 xl:gap-80 m-auto px-4  lg:px-10 xl:px-20 py-4 shadow capitalize">
       <div className="" >
         <div className="flex gap-10">
           <ul>
@@ -28,7 +28,7 @@ const FooterPage = () => {
         </div>
       </div>
       <div className="w-full text-center">
-        <p> "Company" all rights reserved 2026 </p>
+        <p> &copy; fahad. all rights reserved 2026 </p>
       </div>
     </div>
   );

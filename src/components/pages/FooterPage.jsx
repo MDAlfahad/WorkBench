@@ -1,9 +1,37 @@
-import React from 'react'
-
 const FooterPage = () => {
   return (
-    <div>FooterPage</div>
-  )
-}
+    <div className="max-w-[1800px] w-full lg:20 xl:gap-80 m-auto px-4  lg:px-10 xl:px-20 py-4 shadow">
+      <div className="" >
+        <div className="flex gap-10">
+          <ul>
+            <li>E-Books</li>
+            <li>gallery</li>
+            <li>Notice</li>
+          </ul>
+          <ul>
+            <li>Login</li>
+            <li>Profile</li>
+            <li>Raise issue</li>
+            <li>Contact us</li>
+          </ul>
+          <ul>
+            <li>Syllabus</li>
+            <li>Time Table</li>
+            <li>Result</li>
+          </ul>
+          <ul>
+            <li>Sports</li>
+            <li>Events</li>
+            <li></li>
 
-export default FooterPage
+          </ul>
+        </div>
+      </div>
+      <div className="w-full text-center">
+        <p> "Company" all rights reserved 2026 </p>
+      </div>
+    </div>
+  );
+};
+
+export default FooterPage;

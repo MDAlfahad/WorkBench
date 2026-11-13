@@ -52,7 +52,7 @@ const LandingPageCrausel = () => {
 
     const timer = setInterval(() => {
       nextSlide();
-    }, 3000); // Har 3 seconds (3000ms) mein slide change hogi
+    }, 4000);
 
     return () => clearInterval(timer);
   }, [currentIndex, isPaused]);

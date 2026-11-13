@@ -13,7 +13,7 @@ import NoticeNotificationBox from "../components/notifications/NoticeNotificatio
 
 const AcadamicServicesPage = () => {
   return (
-    <div className="max-w-[1800px] w-full flex items-start justify-center gap-5 lg:20 xl:gap-80 m-auto bg-gray-100 px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
+    <div className="max-w-[1800px] w-full flex items-start justify-center gap-5 lg:gap-20 xl:gap-80 m-auto bg-gray-100 px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
       <div className="flex flex-col gap-4 max-w-[800px]">
         <div className="flex items-center gap-4 ">
           <div className="rounded-md  border-2 border-black-60 w-40 h-32  overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300">
@@ -80,7 +80,7 @@ const AcadamicServicesPage = () => {
             <h1 className="flex items-center text-2xl gap-2  text-white">
               <AiOutlineBell /> Latest Notice
             </h1>
-            <span className="flex items-center text-white/80 gap-1">
+            <span className="flex items-center text-white/80 gap-1 cursor-pointer">
               <p className="">view all</p> <GoLinkExternal />
             </span>
           </div>

@@ -35,7 +35,7 @@
 }
 .loginButton:hover{
     color: white;
-     border: .5px solid green;
+     border: 1px solid #9C0B00;
      /* color: #9C0B00; */
      color: white;
 }
@@ -49,7 +49,7 @@
     left: 0;
     transform: translateX(-100%);
     transition: .3s ease;
-    background: green;
+    background: #9C0B00;
     z-index: -1;
 
 }

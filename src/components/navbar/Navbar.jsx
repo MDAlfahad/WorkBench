@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import GlobalButton from "../buttons/GlobalButton";
+import Image  from "../../assets/doctor.jpg";
 import LoginButton from "../buttons/LoginButton";
 import { useState } from "react";
 import { Bell, ChevronDown, LayoutDashboard, LogOut } from "lucide-react";
 const Navbar = () => {
   const navigate = useNavigate();
-
-  
 
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -91,7 +89,7 @@ const Navbar = () => {
                     {notifications.map((n) => (
                       <div
                         key={n.id}
-                        className="px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer flex items-start space-x-3"
+                        className="px-4 py-3 hover:bg-slate-100 transition-colors cursor-pointer flex items-start space-x-3"
                       >
                         <div
                           className={`w-2 h-2 mt-1.5 rounded-full ${n.unread ? "bg-indigo-600" : "bg-transparent"}`}
@@ -119,9 +117,9 @@ const Navbar = () => {
                 className="flex items-center space-x-3 p-1.5 rounded-xl  transition-colors"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
+                  src={Image}
                   alt="Profile"
-                  className="w-8 h-8 rounded-xl object-cover ring-2 ring-indigo-500/30"
+                  className="w-8 h-8 rounded-full object-cover ring-2 ring-primary"
                 />
                 <div className="hidden md:block text-left">
                   <span className="block text-xs font-semibold leading-tight">
@@ -145,12 +143,12 @@ const Navbar = () => {
                     </p>
                   </div>
                   <div className="border-t border-inherit pt-1">
-
-                    <button className="w-full text-left px-4 py-2 text-xs text-black/90 hover:bg-primary/20 flex items-center space-x-2 transition-colors"
-                    onClick={()=>navigate("/student-dashboard")}>
+                    <button
+                      className="w-full text-left px-4 py-2 text-xs text-black/90 hover:bg-primary/20 flex items-center space-x-2 transition-colors"
+                      onClick={() => navigate("/student-dashboard")}
+                    >
                       <LayoutDashboard className="w-3.5 h-3.5" />
-                      <span
-                       >Dashboard</span>
+                      <span>Dashboard</span>
                     </button>
                     <button className="w-full text-left px-4 py-2 text-xs text-rose-500 hover:bg-primary/20 flex items-center space-x-2 transition-colors">
                       <LogOut className="w-3.5 h-3.5" />

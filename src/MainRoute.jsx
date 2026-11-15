@@ -6,6 +6,7 @@ import StudentDashboard from "./components/pages/authPage/StudentDashboard";
 import AdminPanel from "./components/pages/authPage/AdminPanel/AdminPanel";
 import LoginRoute from "./components/pages/routes/authRoute/LoginRoute";
 import StudentLoginRoute from "./components/pages/routes/authRoute/StudentLoginRoute";
+import TeacherDashboard from "./components/pages/authPage/TeacherDashboard";
 const MainRoute = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const MainRoute = () => {
         <Routes>
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/student-dashboard" element={<StudentDashboard />} />
+          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/admin-panel" element={<AdminPanel />} />
           <Route path="/login-route" element={<LoginRoute />} />
           <Route path="/student-login-page" element={<StudentLoginRoute />} />

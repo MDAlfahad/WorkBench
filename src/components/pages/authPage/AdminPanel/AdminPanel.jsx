@@ -10,14 +10,11 @@ import {
 import { useState } from "react";
 
 export default function AdminPanel() {
-  
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
- 
   const [activeNav, setActiveNav] = useState("Dashboard");
 
- 
   const navItems = [
     { name: "Dashboard", icon: LayoutDashboard },
     { name: "Teacher", icon: GraduationCap },
@@ -26,8 +23,6 @@ export default function AdminPanel() {
     { name: "Payments", icon: CreditCard },
     { name: "Settings", icon: SettingsIcon },
   ];
-
-  
 
   const renderDashboard = () => (
     <div className="space-y-6 animate-in fade-in duration-300">
@@ -42,7 +37,6 @@ export default function AdminPanel() {
     </div>
   );
 
-  
   const renderTeacher = () => (
     <div className="space-y-6 animate-in fade-in duration-300">
       <div className="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
@@ -56,7 +50,6 @@ export default function AdminPanel() {
     </div>
   );
 
-  
   const renderStudent = () => (
     <div className="space-y-6 animate-in fade-in duration-300">
       <div className="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
@@ -70,7 +63,6 @@ export default function AdminPanel() {
     </div>
   );
 
-  
   const renderExamSettings = () => (
     <div className="space-y-6 animate-in fade-in duration-300">
       <div className="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
@@ -84,7 +76,6 @@ export default function AdminPanel() {
     </div>
   );
 
-  
   const renderPayments = () => (
     <div className="space-y-6 animate-in fade-in duration-300">
       <div className="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
@@ -98,7 +89,6 @@ export default function AdminPanel() {
     </div>
   );
 
-  
   const renderSettings = () => (
     <div className="space-y-6 animate-in fade-in duration-300">
       <div className="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
@@ -133,7 +123,6 @@ export default function AdminPanel() {
 
   return (
     <div className="bg-slate-50 text-slate-800 min-h-screen flex font-sans transition-colors duration-300">
-      
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}
@@ -141,13 +130,11 @@ export default function AdminPanel() {
         />
       )}
 
-     
       <aside
         className={`fixed inset-y-0 left-0 z-50 flex flex-col bg-white border-r border-slate-200 transition-all duration-300 ease-in-out ${
           sidebarCollapsed ? "w-20" : "w-64"
         } ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
-        
         <div className="flex items-center justify-between h-16 px-4 border-b border-slate-200">
           <div className="flex items-center space-x-3 overflow-hidden">
             {!sidebarCollapsed && (
@@ -164,7 +151,6 @@ export default function AdminPanel() {
           </button>
         </div>
 
-       
         <div className="flex-1 px-3 py-4 space-y-1.5 overflow-y-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -191,7 +177,6 @@ export default function AdminPanel() {
                   <span className="truncate text-sm">{item.name}</span>
                 )}
 
-               
                 {sidebarCollapsed && (
                   <div className="absolute left-full ml-2 px-2.5 py-1 bg-slate-900 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none shadow-md">
                     {item.name}
@@ -203,13 +188,11 @@ export default function AdminPanel() {
         </div>
       </aside>
 
-      
       <div
         className={`flex-1 flex flex-col transition-all duration-300 ${
           sidebarCollapsed ? "lg:ml-20" : "lg:ml-64"
         }`}
       >
-        
         <header className="sticky top-0 z-30 h-16 px-4 sm:px-6 flex items-center justify-between border-b bg-white/90 border-slate-200 backdrop-blur-md ">
           <div className="flex items-center space-x-3">
             <button

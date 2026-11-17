@@ -1,10 +1,11 @@
-import { Cog, NotebookPen, ReceiptText, User, Users } from "lucide-react";
+import { Cog, NotebookPen, ReceiptText, User, Users, X } from "lucide-react";
 import React, { useState } from "react";
+import Image from "../../../assets/doctor.jpg";
 
 const TeacherDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [activeNav, setActiveNav] = useState("dashboard");
+  const [activeNav, setActiveNav] = useState("Profile");
 
   const navItem = [
     { name: "Profile", icon: User },
@@ -13,44 +14,66 @@ const TeacherDashboard = () => {
     { name: "Payments", icon: ReceiptText },
     { name: "Settings", icon: Cog },
   ];
+
   const renderProfile = () => (
-    <div>profile</div>
-  )
-  const renderStudentList = () => (
-    <div>StudentList</div>
+    <div>
+      <div>My Profile</div>
+      <div>
+        <div>
+          <div className="w-40 h-40 rounded-md overflow-hidden">
+            {" "}
+            <img src={Image} alt="" className="w-full h-full object-cover " />
+          </div>
+          <div>
+            <h1>Alfahad</h1>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-  const renderIssueResult = () => (
-    <div>issue result</div>
-  )
-  const renderPyaments = () => (
-    <div>payemts</div>
-  )
-  const renderSettings = () => (
-    <div>settings</div>
-  )
+  const renderStudentList = () => <div>StudentList</div>;
+  const renderIssueResult = () => <div>issue result</div>;
+  const renderPyaments = () => <div>payemts</div>;
+  const renderSettings = () => <div>settings</div>;
+
   const renderActivePage = () => {
-    switch ("activeNav") {
+    switch (activeNav) {
       case "Profile":
         return renderProfile();
+
       case "Student List":
         return renderStudentList();
+
       case "Issue Result":
         return renderIssueResult();
+
       case "Payments":
         return renderPyaments();
+
       case "Settings":
         return renderSettings();
-    default:
+
+      default:
         return renderProfile();
     }
   };
+
   return (
-    <div className="max-w-[1800px] w-full h-[100vh] flex  m-auto pt-14 bg-gray-100 ">
-      <div>
-        <div className="w-72 h-full bg-white border border-slate-200">
+    <div className="max-w-[1800px] w-full h-[100vh] flex m-auto pt-14 bg-gray-100">
+      <div className="w-72 h-full bg-white border border-slate-200 pt-4">
+        {sidebarOpen && (
+          <div
+            onClick={() => setSidebarOpen(false)}
+            className="fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm lg:hidden transition-opacity"
+          />
+        )}
+
+        <div>
           {navItem.map((item) => {
             const Icon = item.icon;
             const isActive = activeNav === item.name;
+
             return (
               <button
                 key={item.name}
@@ -69,6 +92,7 @@ const TeacherDashboard = () => {
                     isActive ? "text-white" : ""
                   }`}
                 />
+
                 {!sidebarCollapsed && (
                   <span className="truncate text-sm">{item.name}</span>
                 )}
@@ -84,12 +108,8 @@ const TeacherDashboard = () => {
         </div>
       </div>
 
-      <div
-        className={`flex-1 flex flex-coltransition-all duration-300 ${
-          sidebarCollapsed ? "lg:ml-20" : "lg:ml-64"
-        }`}
-      >
-        <main className="flex-1 p-4 sm:p-8 max-w-7xl w-full mx-auto">
+      <div>
+        <main className="flex-1 max-w-7xl w-full mx-auto overflow-y-auto p-4">
           {renderActivePage()}
         </main>
       </div>

@@ -25,47 +25,52 @@ const TeacherDashboard = () => {
   ];
 
   const renderProfile = () => (
-    <div>
-      <div>My Profile</div>
-      <div>
-        <div>
-          <div className="w-40 h-40 rounded-md overflow-hidden">
+    <div className="flex flex-col gap-2 w-full">
+      <div className="text-2xl md:text-4xl">My Profile</div>
+      <div className="flex flex-col gap-2 w-full ">
+        <div className="flex  bg-white rounded-md lg:rounded-xl border boder-slate-200 p-2 lg:p-4">
+          <div className="w-48 h-48 overflow-hidden">
             {" "}
             <img src={Image} alt="" className="w-full h-full object-cover " />
           </div>
           <div>
-            <div>
-              <div>
-                <h1>Alfahad</h1>
-                <p>Activity 45 day</p>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center lg:gap-20">
+                <div>
+                  <h1>Alfahad</h1>
+                  <p>Activity 45 day</p>
+                </div>
+                <div>
+                  <Share />
+                  <PenLine />
+                </div>
               </div>
-              <div>
-                <Share />
-                <PenLine />
+              <div className="flex items-center">
+                <div>
+                  <p>N909090909</p>
+                  <p>bhilai, bg</p>
+                </div>
+                <div>
+                  <p>email address</p>
+                  <p>subject teacher</p>
+                </div>
               </div>
             </div>
-            <div>
+            <div className="flex items-center ">
               <div>
-                <p>N909090909</p>
-                <p>bhilai, bg</p>
+                <p>total student</p>
+                <p>100</p>
               </div>
               <div>
-                <p>email address</p>
-                <p>subject teacher</p>
+                <p>total leave</p>
+                <p>10</p>
               </div>
             </div>
           </div>
-          <div>
-            <div>
-              <p>total student</p>
-              <p>100</p>
-            </div>
-            <div>
-              <p>total leave</p>
-              <p>10</p>
-            </div>
-            <div></div>
-          </div>
+        </div>
+
+        <div>
+          <div></div>
         </div>
       </div>
     </div>
@@ -98,7 +103,7 @@ const TeacherDashboard = () => {
   };
 
   return (
-    <div className="max-w-[1800px] w-full h-[100vh] flex m-auto pt-14 bg-gray-100">
+    <div className=" w-full h-[100vh] flex m-auto pt-14 bg-gray-100">
       <div className="w-72 h-full bg-white border border-slate-200 pt-4">
         {sidebarOpen && (
           <div
@@ -146,11 +151,9 @@ const TeacherDashboard = () => {
         </div>
       </div>
 
-      <div>
-        <main className="flex-1 max-w-7xl w-full mx-auto overflow-y-auto p-4">
-          {renderActivePage()}
-        </main>
-      </div>
+      <main className="w-full [h-90vh] p-4 overflow-y-auto">
+        {renderActivePage()}
+      </main>
     </div>
   );
 };

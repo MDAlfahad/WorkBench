@@ -1,5 +1,14 @@
-import { Cog, NotebookPen, ReceiptText, User, Users, X } from "lucide-react";
-import React, { useState } from "react";
+import {
+  Cog,
+  NotebookPen,
+  PenLine,
+  ReceiptText,
+  Share,
+  User,
+  Users,
+  X,
+} from "lucide-react";
+import { useState } from "react";
 import Image from "../../../assets/doctor.jpg";
 
 const TeacherDashboard = () => {
@@ -25,8 +34,37 @@ const TeacherDashboard = () => {
             <img src={Image} alt="" className="w-full h-full object-cover " />
           </div>
           <div>
-            <h1>Alfahad</h1>
-            <p></p>
+            <div>
+              <div>
+                <h1>Alfahad</h1>
+                <p>Activity 45 day</p>
+              </div>
+              <div>
+                <Share />
+                <PenLine />
+              </div>
+            </div>
+            <div>
+              <div>
+                <p>N909090909</p>
+                <p>bhilai, bg</p>
+              </div>
+              <div>
+                <p>email address</p>
+                <p>subject teacher</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>total student</p>
+              <p>100</p>
+            </div>
+            <div>
+              <p>total leave</p>
+              <p>10</p>
+            </div>
+            <div></div>
           </div>
         </div>
       </div>

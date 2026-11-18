@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa6";
-import LoginButton from "../../../buttons/LoginButton";
+import LoginButton from "../../../components/buttons/LoginButton";
 
 const StudentLoginRoute = () => {
   const [show, setShow] = useState(false);

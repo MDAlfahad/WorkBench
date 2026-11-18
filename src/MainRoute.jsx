@@ -6,7 +6,7 @@ import StudentDashboard from "./components/pages/authPage/StudentDashboard";
 import AdminPanel from "./components/pages/authPage/AdminPanel/AdminPanel";
 import LoginRoute from "./components/pages/routes/authRoute/LoginRoute";
 import StudentLoginRoute from "./components/pages/routes/authRoute/StudentLoginRoute";
-import TeacherDashboard from "./components/pages/authPage/TeacherDashboard";
+import TeacherDashboard from "./components/pages/authPage/teacherDashboard/TeacherDashboard";
 const MainRoute = () => {
   return (
     <div>

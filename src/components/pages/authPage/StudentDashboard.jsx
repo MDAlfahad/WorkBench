@@ -1,4 +1,4 @@
-import GlobalButton from "../../buttons/GlobalButton";
+import GlobalButton from "../../components/buttons/GlobalButton";
 import Image from "../../../assets/doctor.jpg";
 import {
   ArrowUpRight,

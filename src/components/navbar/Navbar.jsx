@@ -1,13 +1,28 @@
 import { useNavigate } from "react-router-dom";
-import Image  from "../../assets/doctor.jpg";
-import LoginButton from "../buttons/LoginButton";
+import Image from "../../assets/doctor.jpg";
+import LoginButton from "../components/buttons/LoginButton";
 import { useState } from "react";
-import { Bell, ChevronDown, LayoutDashboard, LogOut } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowRight,
+  Bell,
+  ChevronDown,
+  GraduationCap,
+  LayoutDashboard,
+  Lock,
+  LogOut,
+  User,
+} from "lucide-react";
 const Navbar = () => {
   const navigate = useNavigate();
 
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const handleLogin = () => {
+    setLoginOpen((setLoginOpen) => !loginOpen);
+  };
   const notifications = [
     {
       id: 1,
@@ -44,9 +59,6 @@ const Navbar = () => {
               gallery
             </li>
             <li className="text-black hover:text-primary cursor-pointer">
-              Raise Issue
-            </li>
-            <li className="text-black hover:text-primary cursor-pointer">
               Notice
             </li>
             <li className="text-black hover:text-primary cursor-pointer">
@@ -54,11 +66,37 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="flex items-center gap-2">
-          <LoginButton
-            text={`Login`}
-            onClick={() => navigate("/login-route")}
-          />
+        <div className="flex items-center gap-2 ">
+          <div>
+            <LoginButton text={`Login`} 
+            onClick={handleLogin}/>
+            {loginOpen && (
+              <div className=" absolute right-28 w-80 z-50 bg-white text-gray-800 flex flex-col rounded-2xl top-full border border-slate-200 overflow-hidden">
+                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer "
+                onClick={()=>navigate("/student-login-page")}>
+                  <div className="flex items-center gap-2">
+                    <User size={18} />
+                    <p>Student login</p>
+                  </div>
+                  <ArrowRight size={18} />
+                </span>
+                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200">
+                  <div className="flex items-center gap-2">
+                    <GraduationCap size={18} />
+                    <p>Teacher login</p>
+                  </div>{" "}
+                  <ArrowRight size={18} />
+                </span>
+                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200">
+                  <div className="flex items-center gap-2">
+                    <Lock size={18} />
+                    <p>Admin login</p>
+                  </div>{" "}
+                  <ArrowRight size={18} />
+                </span>
+              </div>
+            )}
+          </div>
           <div className="flex items-center space-x-3">
             {/* Notifications Dropdown */}
             <div className="relative">

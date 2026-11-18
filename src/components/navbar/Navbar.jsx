@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Image from "../../assets/doctor.jpg";
 import LoginButton from "../components/buttons/LoginButton";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
-  ArrowDown,
   ArrowRight,
   Bell,
   ChevronDown,
@@ -19,6 +18,24 @@ const Navbar = () => {
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const componentRef = useRef(null);
+
+  useEffect(() => {
+    const handleClick = () => {
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
+        setNotificationsOpen(false);
+        setLoginOpen(false);
+        setProfileOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, []);
 
   const handleLogin = () => {
     setLoginOpen((setLoginOpen) => !loginOpen);
@@ -44,7 +61,10 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="bg-whtie fixed z-50 bg-white w-full shadow-lg">
+    <div
+      className="bg-whtie fixed z-50 bg-white w-full shadow-lg"
+      ref={componentRef}
+    >
       <div className="max-w-[1800px] w-full m-auto flex items-center justify-between px-4 lg:px-8 xl:px-12 py-2">
         <div>Grade</div>
         <div>
@@ -68,19 +88,21 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-2 ">
           <div>
-            <LoginButton text={`Login`} 
-            onClick={handleLogin}/>
+            <LoginButton text={`Login`} onClick={handleLogin} />
             {loginOpen && (
               <div className=" absolute right-28 w-80 z-50 bg-white text-gray-800 flex flex-col rounded-2xl top-full border border-slate-200 overflow-hidden">
-                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer "
-                onClick={()=>navigate("/student-login-page")}>
+                <span
+                  className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer "
+                  onClick={() => navigate("/student-login-page")}
+                >
                   <div className="flex items-center gap-2">
                     <User size={18} />
                     <p>Student login</p>
                   </div>
                   <ArrowRight size={18} />
                 </span>
-                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200">
+                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200"
+                onClick={()=>navigate("/teacher-login-page")}>
                   <div className="flex items-center gap-2">
                     <GraduationCap size={18} />
                     <p>Teacher login</p>
@@ -105,12 +127,11 @@ const Navbar = () => {
                   setNotificationsOpen(!notificationsOpen);
                   setProfileOpen(false);
                 }}
-                className={`p-2 rounded-xl border relative transition-colors 
-                   "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
-                `}
+                className="p-2 rounded-xl border bg-white hover:bg-primary hover:text-white relative transition-colors border-slate-200 text-slate-600
+                "
               >
                 <Bell className="w-5 h-5" />
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-indigo-600 rounded-full ring-2 ring-white dark:ring-slate-900"></span>
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-indigo-600 hover: rounded-full ring-2 ring-white dark:ring-slate-900"></span>
               </button>
 
               {notificationsOpen && (

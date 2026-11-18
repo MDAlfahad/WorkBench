@@ -7,6 +7,7 @@ import AdminPanel from "./components/pages/authPage/AdminPanel/AdminPanel";
 import LoginRoute from "./components/pages/routes/authRoute/LoginRoute";
 import StudentLoginRoute from "./components/pages/routes/authRoute/StudentLoginRoute";
 import TeacherDashboard from "./components/pages/authPage/teacherDashboard/TeacherDashboard";
+import TeacherLogin from "./components/pages/routes/authRoute/TeacherLogin";
 const MainRoute = () => {
   return (
     <div>
@@ -20,6 +21,7 @@ const MainRoute = () => {
           <Route path="/admin-panel" element={<AdminPanel />} />
           <Route path="/login-route" element={<LoginRoute />} />
           <Route path="/student-login-page" element={<StudentLoginRoute />} />
+          <Route path="/teacher-login-page" element={<TeacherLogin />} />
         </Routes>
       </Router>
     </div>

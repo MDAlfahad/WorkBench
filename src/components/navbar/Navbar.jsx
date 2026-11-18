@@ -96,15 +96,17 @@ const Navbar = () => {
                   onClick={() => navigate("/student-login-page")}
                 >
                   <div className="flex items-center gap-2">
-                    <User size={18} />
+                    <GraduationCap size={18} />
                     <p>Student login</p>
                   </div>
                   <ArrowRight size={18} />
                 </span>
-                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200"
-                onClick={()=>navigate("/teacher-login-page")}>
+                <span
+                  className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200"
+                  onClick={() => navigate("/teacher-login-page")}
+                >
                   <div className="flex items-center gap-2">
-                    <GraduationCap size={18} />
+                    <User size={18} />
                     <p>Teacher login</p>
                   </div>{" "}
                   <ArrowRight size={18} />

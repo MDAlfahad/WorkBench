@@ -8,6 +8,7 @@ import LoginRoute from "./components/pages/routes/authRoute/LoginRoute";
 import StudentLoginRoute from "./components/pages/routes/authRoute/StudentLoginRoute";
 import TeacherDashboard from "./components/pages/authPage/teacherDashboard/TeacherDashboard";
 import TeacherLogin from "./components/pages/routes/authRoute/TeacherLogin";
+import ELibraryRoute from "./components/pages/routes/route/ELibraryRoute";
 const MainRoute = () => {
   return (
     <div>
@@ -22,6 +23,7 @@ const MainRoute = () => {
           <Route path="/login-route" element={<LoginRoute />} />
           <Route path="/student-login-page" element={<StudentLoginRoute />} />
           <Route path="/teacher-login-page" element={<TeacherLogin />} />
+          <Route path="/e-library" element={<ELibraryRoute />} />
         </Routes>
       </Router>
     </div>

@@ -14,7 +14,7 @@ const TeacherLogin = () => {
   };
   return (
     <div className="max-w-[1800px] m-auto w-full h-[100vh] flex flex-col items-center justify-center overflow-hidden z-10 capitalize">
-      <div className="bg absolute "></div>
+      <div className="bgteacher absolute "></div>
       <div className="max-w-[1600px] md:w-[600px] border borfder-primary/80 bg-white rounded-2xl">
         <h1 className="py-4 text-3xl text-center font-semibold">Login Here!</h1>
         <form

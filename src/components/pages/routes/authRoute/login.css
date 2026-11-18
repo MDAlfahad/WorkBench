@@ -1,5 +1,16 @@
 .bg{
-    background: url(../../../../assets//stdbglogin.webp);
+    background: url(../../../../assets/stdbglogin.webp) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    z-index: -99;
+    opacity: 80%;
+
+}
+.bgteacher{
+    background: url(../../../../assets/techerlogin.webp) no-repeat ;
+    background-size: cover;
     width: 100%;
     height: 100%;
     filter: blur(10px);

@@ -10,8 +10,10 @@ import {
 } from "react-icons/io5";
 import { LuBell, LuNotepadText } from "react-icons/lu";
 import NoticeNotificationBox from "../components/notifications/NoticeNotificationBox";
+import { useNavigate } from "react-router-dom";
 
 const AcadamicServicesPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="max-w-[1800px] w-full flex items-start justify-center gap-5 lg:gap-20 xl:gap-80 m-auto bg-gray-100 px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
       <div className="flex flex-col gap-4 max-w-[800px]">
@@ -62,7 +64,8 @@ const AcadamicServicesPage = () => {
       </div>
       <div className="flex flex-col gap-4 w-full">
         <div className="flex lg:items-center gap-2">
-          <div className="flex items-center gap-2 px-4 py-2 border border-primary/40 hover:border-black cursor-pointer hover:scale-105 transition-all duration-300">
+          <div className="flex items-center gap-2 px-4 py-2 border border-primary/40 hover:border-black cursor-pointer hover:scale-105 transition-all duration-300"
+          onClick={()=>navigate("/e-library")}>
             <ImBooks className="text-primary" size={22} />{" "}
             <p className="flex items-center">
               E-library <IoIosArrowRoundForward size={30} />
@@ -75,7 +78,7 @@ const AcadamicServicesPage = () => {
             </p>
           </div>
         </div>
-        <div className="h-[50vh] border border-primary/90 ">
+        <div className="h- auto border border-primary/90 ">
           <div className="w-full flex items-center justify-between py-3 px-2  bg-primary/90">
             <h1 className="flex items-center text-2xl gap-2  text-white">
               <AiOutlineBell /> Latest Notice

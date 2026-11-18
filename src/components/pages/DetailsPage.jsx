@@ -1,10 +1,10 @@
 import Image from "../../assets/doctor.jpg";
 const DetailsPage = () => {
   return (
-    <div className="max-w-[1800px] w-fulllg:20 xl:gap-80 m-auto bg-white px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
+    <div className="max-w-[1800px] w-full lg:20 xl:gap-80 m-auto bg-white px-4  lg:px-10 xl:px-20 py-4 lg:py-28">
       <div className="flex flex-col gap-4">
         <div className="flex items-start justify-center gap-4 lg:gap-10 xl:gap-16 w-full ">
-          <div className="w-[20rem] h-[40vh] bg-secondary">
+          <div className="w-[20rem] bg-secondary overflow-hidden">
             <img src={Image} alt="" className="w-full h-full object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" />
           </div>
           <div className="max-w-[900px]">
@@ -27,7 +27,7 @@ const DetailsPage = () => {
             </p>
             <p className="text-end py-1 italic w-full">____ "principal Name"</p>
           </div>
-          <div className="w-[20rem] h-[40vh] bg-secondary">
+          <div className="w-[20rem] bg-secondary">
             <img src={Image} alt="" className="w-full h-full object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" />
           </div>
         </div>

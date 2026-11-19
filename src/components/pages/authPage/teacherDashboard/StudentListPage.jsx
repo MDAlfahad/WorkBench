@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Price } from "../../../components/currency/Currency";
 import GlobalButton from "../../../components/buttons/GlobalButton";
 import BackButton from "../../../components/buttons/BackButton";
+import { Plus } from "lucide-react";
 
 const StudentListPage = () => {
   const [isClick, setIsClick] = useState(false);
@@ -11,7 +12,8 @@ const StudentListPage = () => {
   };
 
   return (
-    <div className="capitalize w-full relative">
+    <div className="capitalize  w-full relative">
+      
       {isClick && (
         <div className="w-full h-[90vh] bg-gray-400/30 flex items-center justify-center absolute backdrop-blur-sm rounded-xl">
           <div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
@@ -6,76 +6,311 @@ import {
 import Image from "../../../assets/doctor.jpg";
 
 const TeachersShowCrausel = () => {
-  const slide = [
+  const teachers = [
     {
-      url: Image,
+      id: 1,
+      image: Image,
       name: "Alfahad",
-      description: "Assistance Professor",
+      designation: "Assistant Professor",
     },
     {
-      url: Image,
+      id: 2,
+      image: Image,
       name: "Dodo",
+      designation: "Professor",
     },
     {
-      url: Image,
+      id: 3,
+      image: Image,
       name: "Todo",
+      designation: "Assistant Professor",
     },
     {
-      url: Image,
+      id: 4,
+      image: Image,
       name: "Kodo",
+      designation: "Professor",
     },
     {
-      url: Image,
+      id: 5,
+      image: Image,
       name: "Modo",
+      designation: "Assistant Professor",
     },
-    
-  ]
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [ispaused, setIsPaused] = useState(false);
+    {
+      id: 6,
+      image: Image,
+      name: "lodo",
+      designation: "Assistant Professor",
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % teachers.length);
+  };
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slide.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+    setActiveIndex((prev) => (prev - 1 + teachers.length) % teachers.length);
   };
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === length.slide - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+
+
+  useEffect(() => {
+    if (paused) return;
+
+    const timer = setInterval(nextSlide, 3500);
+
+    return () => clearInterval(timer);
+  }, [paused]);
+
+  
+  const getTeacher = (position) => {
+    const index = (activeIndex + position + teachers.length) % teachers.length;
+
+    return teachers[index];
   };
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
+
+  const positions = [-2, -1, 0, 1, 2];
+
   return (
-    <div className="max-w-[1800px] m-auto w-full h-[500px] px-4 lg:px-14 flex items-center justify-center gap-5 relative">
-      {slide.map((item, index) => (
-        <div
-          key={index}
-          className="w-60 border border-slate-300 rounded-xl p-2 bg-white overflow-hidden"
+    <section
+      className="w-full max-w-[1800px] mx-auto px-4 lg:px-10 py-10 capitalize"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* CAROUSEL */}
+      <div className="relative w-full">
+        {/* LEFT BUTTON */}
+        <button
+          onClick={prevSlide}
+          className="
+            absolute
+            left-0
+            top-1/2
+            -translate-y-1/2
+            z-30
+
+            w-12
+            h-12
+
+            rounded-full
+
+            flex
+            items-center
+            justify-center
+
+            bg-black/30
+            backdrop-blur-md
+
+            text-white
+
+            hover:bg-black/75
+            hover:scale-105
+
+            transition-all
+            duration-300
+          "
         >
-          <img
-            src={item.url}
-            className="w-full h-full object-cover rounded-lg"
-          />
-          <h1 className="italic text-sm font-medium pt-2 text-end">
-            __{item.name}
-          </h1>
-          <p className="text-xs text-end">
-            {item.description ? `"${item.description}"` : "Teacher"}
-          </p>
+          <MdOutlineKeyboardArrowLeft size={30} />
+        </button>
+
+        {/* CARDS AREA */}
+        <div
+          className="
+            w-full
+            flex
+            items-center
+            justify-center
+
+            overflow-hidden
+
+            min-h-[400px]
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              justify-center
+
+              gap-5
+
+              w-full
+            "
+          >
+            {positions.map((position) => {
+              const teacher = getTeacher(position);
+
+              const isCenter = position === 0;
+
+              return (
+                <div
+                  key={`${teacher.id}-${position}`}
+                  className={`
+                    flex-shrink-0
+
+                    border
+                    border-slate-300
+
+                    rounded-xl
+
+                    p-2
+
+                    bg-white
+
+                    overflow-hidden
+
+                    shadow-sm
+
+                    transition-all
+                    duration-500
+                    ease-in-out
+
+                    ${
+                      isCenter
+                        ? `
+                          w-[260px]
+                          scale-105
+                          shadow-lg
+                          z-10
+                        `
+                        : `
+                          w-[240px]
+                          scale-95
+                          opacity-75
+                        `
+                    }
+
+                    hidden
+
+                    ${
+                      position === -1 || position === 0 || position === 1
+                        ? "block"
+                        : ""
+                    }
+
+                    lg:block
+                  `}
+                >
+                  {/* IMAGE */}
+                  <div
+                    className={`
+                      w-full
+                      overflow-hidden
+                      rounded-lg
+                      bg-slate-100
+
+                      ${isCenter ? "h-[300px]" : "h-[280px]"}
+                    `}
+                  >
+                    <img
+                      src={teacher.image}
+                      alt={teacher.name}
+                      className="
+                        w-full
+                        h-full
+                        object-cover
+
+                        rounded-lg
+
+                        transition-transform
+                        duration-500
+
+                        hover:scale-105
+                      "
+                    />
+                  </div>
+
+                  {/* DETAILS */}
+                  <div className="pt-2 pb-1">
+                    <h2
+                      className={`
+                        italic
+                        font-medium
+                        text-end
+
+                        ${isCenter ? "text-base" : "text-sm"}
+                      `}
+                    >
+                      __{teacher.name}
+                    </h2>
+
+                    <p
+                      className="
+                        text-xs
+                        text-end
+                        text-slate-600
+                      "
+                    >
+                      "{teacher.designation}"
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      ))}
-      <div className=" group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5  rounded-full px-3 py-3 h-12 w-12 bg-black/30 backdrop-blur-md text-white cursor-pointer hover:bg-black/75 transition">
-        <button onClick={prevSlide} className="focus:outline-none">
-          <MdOutlineKeyboardArrowLeft size={24} />
+
+        {/* RIGHT BUTTON */}
+        <button
+          onClick={nextSlide}
+          className="
+            absolute
+            right-0
+            top-1/2
+            -translate-y-1/2
+            z-30
+
+            w-12
+            h-12
+
+            rounded-full
+
+            flex
+            items-center
+            justify-center
+
+            bg-black/30
+            backdrop-blur-md
+
+            text-white
+
+            hover:bg-black/75
+            hover:scale-105
+
+            transition-all
+            duration-300
+          "
+        >
+          <MdOutlineKeyboardArrowRight size={30} />
         </button>
       </div>
 
-      <div className=" group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full px-3 py-3  h-12 w-12 bg-black/30 backdrop-blur-md  text-white cursor-pointer hover:bg-black/75 transition ">
-        <button onClick={nextSlide} className="focus:outline-none ">
-          <MdOutlineKeyboardArrowRight size={24} />
-        </button>
+      {/* DOTS */}
+      <div className="flex justify-center items-center gap-2 mt-6">
+        {teachers.map((teacher, index) => (
+          <button
+            key={teacher.id}
+            onClick={() => setActiveIndex(index)}
+            className={`
+              h-2
+              rounded-full
+
+              transition-all
+              duration-300
+
+              ${
+                activeIndex === index
+                  ? "w-7 bg-slate-800"
+                  : "w-2 bg-slate-300 hover:bg-slate-500"
+              }
+            `}
+          />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

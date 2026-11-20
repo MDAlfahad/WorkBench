@@ -10,11 +10,13 @@ import TeacherDashboard from "./components/pages/authPage/teacherDashboard/Teach
 import TeacherLogin from "./components/pages/routes/authRoute/TeacherLogin";
 import ELibraryRoute from "./components/pages/routes/route/ELibraryRoute";
 import SyllabussRoute from "./components/pages/routes/route/SyllabussRoute";
+import ScrollToTop from "./components/components/ScrollToTop";
 
 const MainRoute = () => {
   return (
     <div>
       <Router>
+        <ScrollToTop/>
         <Navbar />
       
        

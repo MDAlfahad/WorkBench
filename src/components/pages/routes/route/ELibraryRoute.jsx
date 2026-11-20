@@ -2,7 +2,7 @@ import React from 'react'
 
 const ELibraryRoute = () => {
   return (
-    <div className='w-full pt-14'>
+    <div className='w-full'>
         <div>
             <h1>E-Library</h1>
             <p>Access digital resources, e-books, and user guides for various learning platforms.</p>

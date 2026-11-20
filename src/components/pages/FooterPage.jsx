@@ -5,8 +5,9 @@ const FooterPage = () => {
     <div className="max-w-[1800px] w-full lg:20 xl:gap-80 m-auto px-4  lg:px-10 xl:px-20 py-4 shadow capitalize">
       <div className=" py-6 text-gray-700">
         <div className="flex items-start justify-between px-20 text-sm">
-          <div>
-            About school
+          <div className="p-2 w-[400px] ">
+           <h1 className="uppercase text-3xl font-semibold"> DP School , bhilai, <br />Chhattisgarh, 490024</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.fuga modi nihil maxime eum, aliquid sint repellat?</p>
           </div>
           <ul className="flex flex-col gap-2">
             <li className="text-[16px] font-semibold uppercase">Student links</li>

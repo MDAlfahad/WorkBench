@@ -9,11 +9,14 @@ import StudentLoginRoute from "./components/pages/routes/authRoute/StudentLoginR
 import TeacherDashboard from "./components/pages/authPage/teacherDashboard/TeacherDashboard";
 import TeacherLogin from "./components/pages/routes/authRoute/TeacherLogin";
 import ELibraryRoute from "./components/pages/routes/route/ELibraryRoute";
+import SyllabussRoute from "./components/pages/routes/route/SyllabussRoute";
+
 const MainRoute = () => {
   return (
     <div>
       <Router>
         <Navbar />
+      
        
         <Routes>
           <Route path="/" element={<LandingPage/>}/>
@@ -24,6 +27,7 @@ const MainRoute = () => {
           <Route path="/student-login-page" element={<StudentLoginRoute />} />
           <Route path="/teacher-login-page" element={<TeacherLogin />} />
           <Route path="/e-library" element={<ELibraryRoute />} />
+          <Route path="/syllabuss" element={<SyllabussRoute />} />
         </Routes>
       </Router>
     </div>

@@ -5,11 +5,16 @@ import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   Bell,
+  BellRing,
   ChevronDown,
   GraduationCap,
+  Home,
+  ImageIcon,
   LayoutDashboard,
   Lock,
   LogOut,
+  PhoneIcon,
+  ReceiptText,
   User,
 } from "lucide-react";
 const Navbar = () => {
@@ -62,27 +67,34 @@ const Navbar = () => {
   ];
   return (
     <div
-      className="bg-whtie fixed z-50 bg-white w-full shadow-lg"
+      className="bg-whtie sticky top-0 z-50 bg-white w-full shadow-lg"
       ref={componentRef}
     >
       <div className="max-w-[1800px] w-full m-auto flex items-center justify-between px-4 lg:px-8 xl:px-12 py-2">
-        <div>Grade</div>
+        <div> A A+</div>
         <div>
           <ul className="flex items-center gap-10">
-            <li className="text-black hover:text-primary cursor-pointer">
+            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer"
+            onClick={()=>navigate("/")}>
+              <Home size={16} />
+              Home
+            </li>
+            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer"
+            onClick={()=>navigate("/syllabuss")}>
+              <GraduationCap size={18} />
               Syllabus
             </li>
-            <li className="text-black hover:text-primary cursor-pointer">
-              Events
+            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
+              <ReceiptText size={16} /> Events
             </li>
-            <li className="text-black hover:text-primary cursor-pointer">
-              gallery
+            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
+              <ImageIcon size={16} /> gallery
             </li>
-            <li className="text-black hover:text-primary cursor-pointer">
-              Notice
+            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
+              <BellRing size={16} /> Notice
             </li>
-            <li className="text-black hover:text-primary cursor-pointer">
-              Contact
+            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
+              <PhoneIcon size={16} /> Contact
             </li>
           </ul>
         </div>

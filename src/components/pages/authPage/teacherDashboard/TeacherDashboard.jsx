@@ -57,7 +57,7 @@ const TeacherDashboard = () => {
   };
 
   return (
-    <div className="max-w-[1800px] w-full h-[100vh] flex m-auto pt-14 bg-gray-100">
+    <div className="max-w-[1800px] w-full h-[90vh] flex m-auto  bg-gray-100">
       <div className="w-72 h-full bg-white border border-slate-200 pt-4">
         {sidebarOpen && (
           <div

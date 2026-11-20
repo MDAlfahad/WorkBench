@@ -7,23 +7,23 @@ import {
 const LandingPageCrausel = () => {
   const slides = [
     {
-      url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+      url: "https://images.pexels.com/photos/39198174/pexels-photo-39198174.jpeg",
       title: "",
     },
     {
-      url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+      url: "https://images.pexels.com/photos/35551044/pexels-photo-35551044.jpeg",
       title: "",
     },
     {
-      url: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1200&q=80",
+      url: "https://images.pexels.com/photos/37190516/pexels-photo-37190516.jpeg",
       title: "",
     },
     {
-      url: "https://images.unsplash.com/photo-1426604966848-d7adacbd02bff?auto=format&fit=crop&w=1200&q=80",
+      url: "https://images.pexels.com/photos/40378016/pexels-photo-40378016.jpeg",
       title: "",
     },
     {
-      url: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80",
+      url: "https://images.pexels.com/photos/9345639/pexels-photo-9345639.jpeg",
       title: "",
     },
   ];
@@ -52,12 +52,12 @@ const LandingPageCrausel = () => {
 
     const timer = setInterval(() => {
       nextSlide();
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [currentIndex, isPaused]);
   return (
-    <div className=" h-[90vh] w-full m-auto relative group">
+    <div className=" h-[70vh] w-full m-auto relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full bg-center bg-cover duration-500 relative"

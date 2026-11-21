@@ -51,7 +51,7 @@ const SyllabussRoute = () => {
             >
               <button
                 className={`flex items-center gap-2 px-4 py-2 border border-primary rounded-lg hover:scale-105 animate-in ease-in duration-300
-            ${isActive ? "bg-primary text-white" : "text-slate-600 hover:bg-primary/80"}`}
+            ${isActive ? "bg-primary text-white" : "text-slate-600 hover:bg-primary/80 hover:text-white"}`}
                 onClick={() => {
                   setActivenav(item.name);
                 }}

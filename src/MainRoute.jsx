@@ -11,6 +11,7 @@ import TeacherLogin from "./components/pages/routes/authRoute/TeacherLogin";
 import ELibraryRoute from "./components/pages/routes/route/ELibraryRoute";
 import SyllabussRoute from "./components/pages/routes/route//syllabus/SyllabussRoute";
 import ScrollToTop from "./components/components/ScrollToTop";
+import EventRoute from "./components/pages/routes/route/event/EventRoute";
 
 const MainRoute = () => {
   return (
@@ -30,6 +31,8 @@ const MainRoute = () => {
           <Route path="/teacher-login-page" element={<TeacherLogin />} />
           <Route path="/e-library" element={<ELibraryRoute />} />
           <Route path="/syllabuss" element={<SyllabussRoute />} />
+          <Route path="/syllabuss" element={<SyllabussRoute />} />
+          <Route path="/event-route" element={<EventRoute />} />
         </Routes>
       </Router>
     </div>

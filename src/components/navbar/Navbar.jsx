@@ -74,25 +74,32 @@ const Navbar = () => {
         <div> A A+</div>
         <div>
           <ul className="flex items-center gap-10">
-            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer"
-            onClick={()=>navigate("/")}>
+            <li
+              className="flex items-center gap-2 text-black hover:text-primary cursor-pointer"
+              onClick={() => navigate("/")}
+            >
               <Home size={16} />
               Home
             </li>
-            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer"
-            onClick={()=>navigate("/syllabuss")}>
+            <li
+              className="flex items-center gap-2 text-black hover:text-primary cursor-pointer"
+              onClick={() => navigate("/syllabuss")}
+            >
               <GraduationCap size={18} />
               Syllabus
             </li>
-            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
+            <li
+              className="flex items-center gap-2 text-black hover:text-primary cursor-pointer"
+              onClick={() => navigate("/event-route")}
+            >
               <ReceiptText size={16} /> Events
             </li>
             <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
               <ImageIcon size={16} /> gallery
             </li>
-            <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
+            {/* <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
               <BellRing size={16} /> Notice
-            </li>
+            </li> */}
             <li className="flex items-center gap-2 text-black hover:text-primary cursor-pointer">
               <PhoneIcon size={16} /> Contact
             </li>
@@ -123,8 +130,10 @@ const Navbar = () => {
                   </div>{" "}
                   <ArrowRight size={18} />
                 </span>
-                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200"
-                onClick={()=>navigate("/admin-panel")}>
+                <span
+                  className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200"
+                  onClick={() => navigate("/admin-panel")}
+                >
                   <div className="flex items-center gap-2">
                     <Lock size={18} />
                     <p>Admin login</p>

@@ -123,7 +123,8 @@ const Navbar = () => {
                   </div>{" "}
                   <ArrowRight size={18} />
                 </span>
-                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200">
+                <span className="flex items-center justify-between px-4 py-4 hover:bg-primary hover:text-white cursor-pointer border-t border-slate-200"
+                onClick={()=>navigate("/admin-panel")}>
                   <div className="flex items-center gap-2">
                     <Lock size={18} />
                     <p>Admin login</p>

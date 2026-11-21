@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const TimeTable = () => {
+const TimeTable = ({ handleClick}) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const [timetable, setTimetable] = useState([
@@ -97,9 +97,14 @@ const TimeTable = () => {
 
   return (
     <div className="w-full bg-white p-4 rounded-xl">
-
       {/* Edit Button */}
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-end mb-4 gap-3">
+        <button
+          onClick={handleClick}
+          className="px-4 py-2 bg-primary text-white rounded-lg"
+        >
+          Back
+        </button>
         <button
           onClick={() => setIsEditing((prev) => !prev)}
           className="px-4 py-2 bg-primary text-white rounded-lg"
@@ -130,7 +135,6 @@ const TimeTable = () => {
           <tbody>
             {timetable.map((row, dayIndex) => (
               <tr key={row.day}>
-
                 <th className="border border-slate-300 px-4 py-3 bg-slate-50 text-left">
                   {row.day}
                 </th>
@@ -148,7 +152,7 @@ const TimeTable = () => {
                           handleSubjectChange(
                             dayIndex,
                             periodIndex,
-                            e.target.value
+                            e.target.value,
                           )
                         }
                         className="w-full px-2 py-1 border rounded outline-none"

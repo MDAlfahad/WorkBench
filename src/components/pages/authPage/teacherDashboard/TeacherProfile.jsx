@@ -20,7 +20,9 @@ const TeacherProfile = () => {
     <div className="flex flex-col gap-2 w-full capitalize text-slate-600 relative">
       {isShow && <div className="w-full h-[90vh] flex items-center justify-center absolute bg-gray-500/30 backdrop-blur-sm p-4 z-50">
         <TimeTable
-        onClick={handleShow}/>
+        onClick={handleShow}
+        handleClick={handleShow}
+        />
         </div>}
       <div className="text-2xl md:text-4xl">My Profile</div>
       <div className="flex flex-col gap-2 w-full ">

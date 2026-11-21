@@ -1,7 +1,6 @@
 import { useState } from "react";
 import BackButton from "../../../components/buttons/BackButton";
 import GlobalButton from "../../../components/buttons/GlobalButton";
-import { Price } from "../../../components/currency/Currency";
 
 const IssueResultPage = () => {
   const [isShow, setIsShow] = useState(false);
@@ -10,7 +9,7 @@ const IssueResultPage = () => {
     setIsShow((setIsShow) => !isShow);
   };
   return (
-    <div className="w-full h-[90vh] flex flex-col items-center justify-start capitaliz relative">
+    <div className="w-full h-[90vh] flex flex-col items-center justify-start capitaliz relative capitalize">
       {isShow && (
         <div className="w-full h-[90vh] flex flex-col px-4 items-center justify-center bg-gray-500/30 backdrop-blur-sm absolute ">
         <form
@@ -86,6 +85,7 @@ const IssueResultPage = () => {
               <th className="">Students Name</th>
               <th className=" ">Roll no</th>
               <th className=" ">reg. No</th>
+              <th className=" ">Marks</th>
               <th className=" ">Result</th>
             </tr>
           </thead>
@@ -94,12 +94,14 @@ const IssueResultPage = () => {
               <td className="">MD Alfahad</td>
               <td className=" ">05</td>
               <td className=" ">025</td>
+              
               <td
                 className=" cursor-pointer hover:underline hover:text-primary animate-in fade-in py-2 duration-500"
                 onClick={handleShow}
               >
                 upload marks
               </td>
+              <td className="hover:underline hover:text-primary cursor-pointer">Show Result</td>
             </tr>
           </tbody>
         </table>

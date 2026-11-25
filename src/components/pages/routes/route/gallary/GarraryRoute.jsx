@@ -2,7 +2,7 @@ import React from 'react'
 
 const GarraryRoute = () => {
   return (
-    <div>GarraryRoute</div>
+    <div>riutreee</div>
   )
 }
 

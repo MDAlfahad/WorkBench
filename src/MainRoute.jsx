@@ -17,12 +17,11 @@ const MainRoute = () => {
   return (
     <div>
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Navbar />
-      
-       
+
         <Routes>
-          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/admin-panel" element={<AdminPanel />} />

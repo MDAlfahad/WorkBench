@@ -11,6 +11,9 @@ export default function EventRoute() {
         <EventComponent
         day={"Today Event"}
         eventD={`1. basket ball match 2. ${<br/>} badmintion match`}/>
+        <div>
+          not updated
+        </div>
         </div>
         
       </div>

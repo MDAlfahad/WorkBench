@@ -12,7 +12,7 @@ export default function EventRoute() {
         day={"Today Event"}
         eventD={`1. basket ball match 2. ${<br/>} badmintion match`}/>
         <div>
-          not updated
+          not updated just setting up  getting for a job
         </div>
         </div>
         
